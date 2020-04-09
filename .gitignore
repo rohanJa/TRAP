@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+#Api Key file
+src/config.js
+src/config2.js
+
 # Xcode
 #
 build/
@@ -160,3 +164,5 @@ RNTester/Pods/*
 # Visual studio
 .vscode
 .vs
+
+
