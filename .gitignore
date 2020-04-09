@@ -160,3 +160,7 @@ RNTester/Pods/*
 # Visual studio
 .vscode
 .vs
+
+
+#Api Key file
+/src/
