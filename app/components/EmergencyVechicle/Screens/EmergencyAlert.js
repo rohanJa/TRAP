@@ -8,7 +8,7 @@ import {
   function EmergencyAlert(){
       return (
           <View> 
-            <Text style={styles.text}> Sucess </Text>
+            <Text style={styles.text}> UnSucess </Text>
           </View>
       );
 }
