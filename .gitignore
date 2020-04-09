@@ -163,5 +163,4 @@ RNTester/Pods/*
 
 
 #Api Key file
-src/config.js
-src/config2.js
+/src/
