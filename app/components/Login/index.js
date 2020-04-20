@@ -3,12 +3,11 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   Alert,
   TouchableOpacity,
-  Image
 } from 'react-native';
 import styles from './styles';
+import {Icon} from 'native-base';
 // import Draw from './app/components/EmergencyVechicle/Routes/Draw';
 var firebase = require("firebase");
 
@@ -17,7 +16,15 @@ class Home extends Component{
         navigationBarHidden:false
     }
 
-    state = {username: "", password: ""}
+    state = {username: "", password: "",  icon: "eye",
+    secureTextEntry: true}
+
+    _changeIcon() {
+        this.setState(prevState => ({
+            icon: prevState.icon == 'eye' ? 'eye-off' : 'eye',
+            secureTextEntry: !prevState.secureTextEntry
+        }));
+    }
 
     checkLogin() {
         const {username, password }=this.state
@@ -36,17 +43,16 @@ class Home extends Component{
     }
 
     render(){
-        const { heading, input,parent } = styles
+        const { heading, input,parent, passContainer, productImg } = styles
         return (
             <View style={parent}>
                 <Text style={heading}>Login </Text>
                 
-                <Image style={styles.productImg} source={require('../Common/logo.png')}/>
-                
                 <TextInput placeholder={"Username"} underlineColorAndroid={'grey'} style={input} onChangeText={text => this.setState({username:text})}/>
-                
-                <TextInput placeholder={"Password"} underlineColorAndroid={'grey'} style={input} secureTextEntry={true} onChangeText={text => this.setState({password:text})}/>
-                
+                <View style={passContainer}> 
+                    <TextInput placeholder={"Password"} underlineColorAndroid={'grey'} style={input} secureTextEntry={this.state.secureTextEntry} onChangeText={text => this.setState({password:text})}/>
+                    <Icon name={this.state.icon} onPress={() => this._changeIcon()} style={productImg}/>
+                </View>
                 <TouchableOpacity
                     style={styles.button}
                     onPress={_ => this.checkLogin()}
