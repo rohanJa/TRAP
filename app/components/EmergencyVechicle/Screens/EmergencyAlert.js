@@ -8,7 +8,7 @@ import {
   function EmergencyAlert(){
       return (
           <View> 
-            <Text style={styles.text}> Rohan Sucess </Text>
+            <Text style={styles.text}> Prakhar Sucess </Text>
           </View>
       );
 }
