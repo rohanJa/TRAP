@@ -6,16 +6,25 @@
  * @flow strict-local
  */
 import React,{Component} from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  Button,
+} from 'react-native';
 import Login from  './app/components/Login';
 import Dashboard from  './app/components/Dashboard';
 import SignUp from  './app/components/SignUp';
+import RegistrationSuccess from  './app/components/SignUp/RegistrationSuccess';
 import Draw from './app/components/EmergencyVechicle/Routes';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from './app/components/Common/SplashScreen'
 import {PERMISSIONS, request} from 'react-native-permissions';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
+
 class App extends Component{
   constructor(props) {
     super(props);
@@ -56,9 +65,11 @@ class App extends Component{
           <Stack.Screen name="Dashboard" component={Dashboard} options={{headerShown:false}}/>
           <Stack.Screen name="SignUp" component={SignUp} options={{headerShown:false}}/> 
           <Stack.Screen name="Draw" component={Draw} options={{headerShown:false}}/>   
+          <Stack.Screen name="RegistrationSuccess" component={RegistrationSuccess} options={{headerShown:false}} />   
         </Stack.Navigator>
       </NavigationContainer>  
     )
   }
 }
+
 export default App;

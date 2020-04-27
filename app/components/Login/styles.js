@@ -23,11 +23,16 @@ export default StyleSheet.create({
         paddingBottom:15,
         marginLeft:30,
         marginRight:30,
-        backgroundColor:'#00BCD4',
+        backgroundColor:'#00BCD4', 
+        borderRadius:10,
+        borderWidth: 1,
+        borderColor: '#fff'
     },
-    parent:{
-        flex: 1,
-        justifyContent:'center',
+     parent:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     productImg:{
         marginTop: 14,
