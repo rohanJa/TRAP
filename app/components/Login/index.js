@@ -9,6 +9,7 @@ import {
   Image
 } from 'react-native';
 import styles from './styles';
+import {Icon} from 'native-base';
 
 var firebase = require("firebase");
 
@@ -18,11 +19,19 @@ class Login extends Component{
     }
     constructor(props){
         super(props)
-    this.state = {phone_number: "", password: ""}
-    this.checkLogin =this.checkLogin.bind(this)
-    
-    
+        this.state = {phone_number: "", password: "",icon: "eye",
+                secureTextEntry: true
+        }
+        this.checkLogin =this.checkLogin.bind(this)
     }
+
+    _changeIcon() {
+        this.setState(prevState => ({
+            icon: prevState.icon == 'eye' ? 'eye-off' : 'eye',
+            secureTextEntry: !prevState.secureTextEntry
+        }));
+    }
+
     checkLogin() {
         const navigation = this.props.navigation
         const {phone_number, password }=this.state
@@ -57,6 +66,13 @@ class Login extends Component{
                
                 <TextInput placeholder={"Phone Number"} underlineColorAndroid={'grey'} style={input} onChangeText={text => this.setState({phone_number:text})} maxLength={10}
             keyboardType="numeric"/>
+                    
+                    {/* Show Password */}
+                <View style={passContainer}> 
+                    <TextInput placeholder={"Password"} underlineColorAndroid={'grey'} style={input} secureTextEntry={this.state.secureTextEntry} onChangeText={text => this.setState({password:text})}/>
+                    <Icon name={this.state.icon} onPress={() => this._changeIcon()} style={productImg}/>
+                </View>      
+
                 <TextInput placeholder={"Password"} underlineColorAndroid={'grey'} style={input} secureTextEntry={true} onChangeText={text => this.setState({password:text})}/>
                 
                 <TouchableOpacity
