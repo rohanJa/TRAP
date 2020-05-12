@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native'
 function SplashScreen() {
     return (
       <View style={styles.viewStyles}>
-        <Image style={styles.image} source={require('./assests/MainCover.png')}/>
+        <Image style={styles.image} source={require('../assests/MainCover.png')}/>
       </View>
     );
 }

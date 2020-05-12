@@ -27,17 +27,18 @@ class Login extends Component{
         const navigation = this.props.navigation
         const {phone_number, password }=this.state
         firebase.database().ref("Credentials/"+phone_number).once('value', function (snapshot) {
-            console.log(phone_number==snapshot.val().phone_number)
-           
-            if(password == snapshot.val().password){
-                //redirect to dashboard
-                navigation.navigate('Draw')
+            try{
+                if(password == snapshot.val().password){
+                    //redirect to dashboard
+                    navigation.navigate('Draw')
+                }
             }
-            else{
-                throw false
-            }
+        catch(err){
+            Alert.alert("Wrong Message","Wrong Phone Number Or Password",[{text:"okay"}])
+
+        }
            
-        }).catch(error=>
+        }).catch((error)=>
             Alert.alert("Wrong Message","Wrong Credentials",[{text:"okay"}])
         );
     }
