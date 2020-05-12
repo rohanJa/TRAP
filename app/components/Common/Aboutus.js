@@ -10,7 +10,7 @@ import {
       return (
         <View style={styles.container}>
         <View style={{alignItems:'center', marginHorizontal:30}}>
-        <Image style={styles.productImg} source={require('./logo.png')}/>
+        <Image style={styles.productImg} source={require('./assests/logo.png')}/>
           <Text style={styles.name}>VanetSim</Text>
           <Text style={styles.description}>
             VanetSim is a traffic managment app which connects

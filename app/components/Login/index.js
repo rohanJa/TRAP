@@ -53,7 +53,7 @@ class Login extends Component{
             <View style={parent}>
                 <Text style={heading}>Login </Text>
                 
-                <Image style={styles.productImg} source={require('../Common/logo.png')}/>
+                <Image style={styles.productImg} source={require('../Common/assests/logo.png')}/>
                
                 <TextInput placeholder={"Phone Number"} underlineColorAndroid={'grey'} style={input} onChangeText={text => this.setState({phone_number:text})} maxLength={10}
             keyboardType="numeric"/>
