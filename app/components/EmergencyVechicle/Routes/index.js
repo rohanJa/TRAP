@@ -15,7 +15,7 @@ export default function Draw(){
   const imagePath='../../Common/assests/'
   return(
     <NavigationContainer independent={true}>
-        <Drawer.Navigator initialRouteName="About" >
+        <Drawer.Navigator initialRouteName="Home" >
           <Drawer.Screen name='Home' component={Home} options={{headerShown:false,
                                                                   drawerIcon :({ tintColor }) =>( 
                                                                       <Image 

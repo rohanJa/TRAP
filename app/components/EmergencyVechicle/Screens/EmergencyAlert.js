@@ -2,15 +2,23 @@ import React, {useState} from 'react'
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Image,
+    TouchableOpacity
   } from 'react-native';
 
-  function EmergencyAlert(){
-      return (
-          <View> 
-            <Text style={styles.text}> Rohan Sucess </Text>
-          </View>
-      );
+function EmergencyAlert(props){
+  return (
+    <View>                          
+      <View>              
+          <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
+              <Image source={require('../../Common/assests/menu.png')} />
+          </TouchableOpacity>
+      </View> 
+
+      <Text style={styles.text}> Emergency Alert </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
