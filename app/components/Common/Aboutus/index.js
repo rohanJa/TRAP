@@ -9,7 +9,7 @@ import {
       return (
         <Container>
             
-          <Header style={{backgroundColor: '#1AB5E6'}}>
+          <Header style={{backgroundColor: '#FFFFFF'}}>
             <Left>
               <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
                 <Image source={require('../assests/menu.png')} />
