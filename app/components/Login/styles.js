@@ -7,8 +7,7 @@ export default StyleSheet.create({
         textAlign: 'center'
     },
     input:{
-        marginLeft: 20,
-        marginRight :20
+        width:300,
     },
     text:{
         color:'#fff',
@@ -29,12 +28,14 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: '#fff',},parent:{
         flex:1,
+        alignSelf:'center',
         justifyContent:"center"
     },
     productImg:{
         width:100,
+        alignSelf:'center',
         height:100,
+        borderRadius:55,
         marginTop: 25,
-        marginLeft: 150
     },
 })
